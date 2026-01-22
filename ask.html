@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Be Mine?</title>
+    <style>
+        body { margin: 0; height: 100vh; background: #fff5f7; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: 'Arial Rounded MT Bold', sans-serif; }
+        .q { font-size: 2.5rem; color: #ff4d7d; text-align: center; margin-bottom: 40px; }
+        .btn { padding: 20px 50px; font-size: 1.5rem; border-radius: 50px; border: none; cursor: pointer; }
+        #yes { background: #ff85a2; color: white; box-shadow: 0 10px 0 #ff4d7d; margin-right: 20px; }
+        #no { background: #eee; color: #888; box-shadow: 0 10px 0 #ccc; position: relative; }
+    </style>
+</head>
+<body>
+    <div class="q">Arshiya,<br>will you be my girlfriend?</div>
+    <div>
+        <button class="btn" id="yes" onclick="window.location.href='success.html'">YES! ❤️</button>
+        <button class="btn" id="no" onmouseover="dodge()">No</button>
+    </div>
+    <script>
+        function dodge() { const b = document.getElementById('no'); b.style.position='fixed'; b.style.left=Math.random()*80+'vw'; b.style.top=Math.random()*80+'vh'; }
+    </script>
+</body>
+</html>

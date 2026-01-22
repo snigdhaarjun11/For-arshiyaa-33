@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>For Arshiya</title>
+    <style>
+        body { margin: 0; height: 100vh; background: #fff5f7; display: flex; justify-content: center; align-items: center; cursor: pointer; font-family: 'Arial Rounded MT Bold', sans-serif; overflow: hidden; }
+        .heart { font-size: 60px; animation: beat 1.2s infinite; filter: drop-shadow(0 0 10px #ffb6c1); }
+        @keyframes beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.3); } }
+        .hint { position: absolute; bottom: 20%; color: #ff85a2; letter-spacing: 2px; font-size: 12px; }
+        #mute-btn { position: fixed; top: 20px; right: 20px; z-index: 999; background: white; border: 2px solid #ff85a2; border-radius: 50%; width: 45px; height: 45px; cursor: pointer; }
+    </style>
+</head>
+<body onclick="startExperience()">
+    <div id="music-wrapper">
+        <button id="mute-btn">🔊</button>
+        <audio id="bg-music" loop><source src="yellow.mp3" type="audio/mpeg"></audio>
+    </div>
+
+    <div class="heart">❤️</div>
+    <div class="hint">TAP TO START OUR STORY</div>
+
+    <script>
+        const audio = document.getElementById('bg-music');
+        const btn = document.getElementById('mute-btn');
+        function startExperience() {
+            audio.play();
+            sessionStorage.setItem('musicPlaying', 'true');
+            window.location.href = 'intro.html';
+        }
+    </script>
+</body>
+</html>

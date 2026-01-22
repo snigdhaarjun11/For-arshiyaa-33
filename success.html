@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>YAY!</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        body { margin: 0; height: 100vh; background: #fff5f7; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: 'Arial Rounded MT Bold', sans-serif; }
+        h1 { color: #ff4d7d; font-size: 5rem; animation: bounce 1s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+    </style>
+</head>
+<body>
+    <h1>YAY! ❤️ sunflowers 🌻</h1>
+    <script>
+        confetti({ particleCount: 200, spread: 70, origin: { y: 0.6 } });
+        setInterval(() => { confetti({ particleCount: 100, spread: 160, origin: { y: 0.6 } }); }, 2000);
+    </script>
+</body>
+</html>

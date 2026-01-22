@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Bouquet</title>
+    <style>
+        body { margin: 0; height: 100vh; background: #fffaf0; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: sans-serif; }
+        .vase { width: 100px; height: 120px; background: white; border: 4px solid #ffb6c1; border-radius: 0 0 40px 40px; position: relative; }
+        .flower { position: absolute; bottom: 80px; font-size: 40px; }
+        .btn { margin: 10px; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="vase" id="v"></div>
+    <div>
+        <button class="btn" onclick="add('🌻')">🌻</button>
+        <button class="btn" onclick="add('🌸')">🌸</button>
+        <button class="btn" onclick="add('🌷')">🌷</button>
+    </div>
+    <button onclick="window.location.href='ask.html'" style="margin-top:30px; background:#ff85a2; color:white; border:none; padding:15px 30px; border-radius:50px; cursor:pointer;">FINISHED</button>
+    <script>
+        function add(f) { const el = document.createElement('div'); el.className='flower'; el.innerText=f; el.style.left=Math.random()*60+'px'; document.getElementById('v').appendChild(el); }
+    </script>
+</body>
+</html>

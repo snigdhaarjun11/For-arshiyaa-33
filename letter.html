@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Message</title>
+    <style>
+        body { margin: 0; height: 100vh; background: #fff0f5; display: flex; justify-content: center; align-items: center; font-family: 'Georgia', serif; }
+        .paper { background: white; padding: 40px; border-radius: 30px; box-shadow: 10px 10px 0 #ffb6c1; max-width: 400px; line-height: 1.8; color: #d63384; }
+        .next-btn { margin-top: 20px; padding: 10px 20px; border: none; background: #ff85a2; color: white; border-radius: 20px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="paper">
+        <div id="typewriter"></div>
+        <button class="next-btn" id="nb" style="display:none" onclick="window.location.href='stars.html'">Catch the Stars ✨</button>
+    </div>
+    <script>
+        const msg = "Arshiya, every time we talk, it feels like the world gets a little brighter. I built this place for you because you deserve something as unique as you are. I hope you're ready for what's next...";
+        let i = 0;
+        function type() { if(i < msg.length) { document.getElementById('typewriter').innerHTML += msg.charAt(i); i++; setTimeout(type, 50); } else { document.getElementById('nb').style.display='block'; } }
+        window.onload = type;
+    </script>
+</body>
+</html>

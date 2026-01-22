@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Catch Stars</title>
+    <style>
+        body { margin: 0; height: 100vh; background: #020617; overflow: hidden; color: white; font-family: sans-serif; }
+        .star { position: absolute; cursor: pointer; font-size: 30px; }
+        #counter { position: fixed; top: 20px; width: 100%; text-align: center; font-size: 24px; color: #fbbf24; }
+        .msg { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+        .btn { padding: 15px 30px; background: #fbbf24; border: none; border-radius: 50px; cursor: pointer; color: #020617; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div id="counter">Stars for Arshiya: <span id="count">0</span>/5</div>
+    <div class="msg" id="m">
+        <h1>You're a Star! ⭐</h1>
+        <button class="btn" onclick="window.location.href='memories.html'">SEE OUR MEMORIES</button>
+    </div>
+    <script>
+        let c = 0;
+        function spawn() {
+            if(c >= 5) return;
+            const s = document.createElement('div');
+            s.className = 'star'; s.innerText = '⭐';
+            s.style.left = Math.random()*90+'vw'; s.style.top = '-50px';
+            document.body.appendChild(s);
+            let p = -50;
+            const inv = setInterval(() => {
+                p += 3; s.style.top = p+'px';
+                if(p > window.innerHeight) { clearInterval(inv); s.remove(); spawn(); }
+            }, 20);
+            s.onclick = () => { c++; document.getElementById('count').innerText = c; s.remove(); clearInterval(inv); if(c < 5) spawn(); else document.getElementById('m').style.display='block'; }
+        }
+        spawn();
+    </script>
+</body>
+</html>

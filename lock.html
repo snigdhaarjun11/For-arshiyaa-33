@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Unlock</title>
+    <style>
+        body { margin: 0; height: 100vh; background: #ffeaef; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+        #lock { font-size: 80px; z-index: 1; transition: 0.5s; }
+        #key { font-size: 60px; cursor: grab; position: absolute; bottom: 10%; animation: float 3s infinite ease-in-out; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .glow { filter: drop-shadow(0 0 20px #ffb6c1); transform: scale(1.2); }
+    </style>
+</head>
+<body>
+    <div id="lock">🔒</div>
+    <div id="key" draggable="true">🔑</div>
+    <script>
+        const key = document.getElementById('key');
+        key.addEventListener('dragend', (e) => {
+            const r = document.getElementById('lock').getBoundingClientRect();
+            if (e.clientX > r.left && e.clientX < r.right && e.clientY > r.top && e.clientY < r.bottom) {
+                document.getElementById('lock').innerHTML = "🔓";
+                document.getElementById('lock').classList.add('glow');
+                setTimeout(() => window.location.href = 'lobby.html', 800);
+            }
+        });
+    </script>
+</body>
+</html>

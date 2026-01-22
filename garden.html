@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Garden</title>
+    <style>
+        body { margin: 0; height: 100vh; background: #e0f7fa; overflow: hidden; cursor: crosshair; }
+        .flower { position: absolute; font-size: 50px; transform: translate(-50%, -50%); animation: grow 0.8s forwards; }
+        @keyframes grow { from { transform: translate(-50%, -50%) scale(0); } to { transform: translate(-50%, -50%) scale(1); } }
+        .btn { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); padding: 15px 40px; background: #ffb6c1; border-radius: 50px; border: none; cursor: pointer; color: white; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <button class="btn" onclick="window.location.href='bouquet.html'">BUILD A BOUQUET</button>
+    <script>
+        window.onclick = (e) => { if(e.target.tagName !== 'BUTTON') {
+            const f = document.createElement('div'); f.className = 'flower'; f.innerText = '🌻';
+            f.style.left = e.clientX+'px'; f.style.top = e.clientY+'px'; document.body.appendChild(f);
+        }};
+    </script>
+</body>
+</html>
